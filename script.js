@@ -9,7 +9,7 @@
  */
 
 /* GLOBAL VARIABLES */
-var items = "gallon of milk, dozen eggs, link of sausage, ounce of cheese, stick of butter";
+var items = "gallon milk,dozen eggs,link sausage,ounce cheese,stick butter";
 
 /* MAIN
  * 1. Create an array from a string list
@@ -27,43 +27,66 @@ function main() {
 /* 1. Function makeList(items)
  * Populate an array from a list of items, and call it itemsArray.
  * Use a method that can which can SPLIT the list string into array elements. 
- * Console.log the itemsArray before you return it. 
- * Total line (not including function definition and closing curly bracket: 3) 
+ * Console.log the itemsArray before you return it using TOSTRING 
+ * Total lines in my code (not including function definition and closing curly bracket): 3
  * @param: list of items, separated by commas
  * @return: itemsArray[]
  */
 function makeList(items){
    let itemsArray = items.split(",");
-   console.log(itemsArray);
+   console.log(itemsArray.toString());
    return itemsArray;
  }
 
 /* 2. Function addPrices(shoppingList)
- * Use a string variable (which you will SPLIT) to create a 1D priceList array
+ * Use a string called prices (which you will SPLIT) to create a 1D priceList array
  * from a 1D array passed as an argument (shoppingList)
  * Create an array called pricesArray where you will store items and prices. 
- * Use a FOR LOOP to create each 2-item subarray from a shoppingList item and the 
- * item in pricesArray with the same INDEX OF that item in shoppingList array. 
+ * Create an array called itemPrice, leave it empty before the FOR LOOP. 
+ * Use a FOR LOOP based on the length of shoppingList[] 
+ * Inside the loop, create a sub-array called itemPrice (because you want it empty each time)
+ * Push the shoppingList item into that itemPrice subArray
+ * Push the pricesArray item with the same index into that itemPrice subArray
  * After you create each subarray, PUSH it to the pricesArray you will return. 
  * You might want to console.log this subArray each time. 
+ * Total lines in my code: 10
  * @param: shopArray
  * @return: pricesArray
  */
 function addPrices(shoppingList){
    let prices = "6.49,4.49,4.89,0.44,1.80";
+   let priceList = prices.split(",");
+   let pricesArray = [];
+   for (let item = 0; item < shoppingList.length; item++){
+      let itemPrice = [];
+      itemPrice.push(shoppingList[item])
+      itemPrice.push(priceList[item]);
+      pricesArray.push(itemPrice);
+   }
+   console.log(pricesArray.toString());
    return pricesArray;
 }
 
 /* 3. Function calculateTotal(pricesArray)
  * Create a variable called total, set to 0.
- * Create a variable called message, with first line as "Items to buy " plus a LINE BREAK
+ * Create a variable called message, with first line as "Items to buy:" plus a LINE BREAK
  * Use a FOR LOOP to add each new message line with the item name, $, the price and a line break.
  * PARSE the price as a FLOAT, and add it to the total. 
  * After the loop is done, add "Total = " and the total to the message
+ * No need to console.log the message - you will be returning and alerting it. 
+ * Total lines in my code: 8
  * Return the message. 
  * @param = pricesArray
  * @return = message
  */ 
 function calculateTotal(pricesArray){
+   let total = 0;
+   let message = "Items to buy: \n";
+   for (let item = 0; item < pricesArray.length;item ++) {
+      message+= pricesArray[item][0] + " $" + pricesArray[item][1]+"\n";
+      total += parseFloat(pricesArray[item][1]);
+   }
+   total = total.toFixed(2);
+   message += "Total = " + total;
    return message;
 }
