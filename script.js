@@ -20,7 +20,8 @@
 function main() {
    let items = "gallon milk,dozen eggs,link sausage,ounce cheese,stick butter";
    let shoppingList = makeList(items);
-   let pricesArray = addPrices(shoppingList);
+   let prices = "6.49,4.49,4.89,0.44,1.80";
+   let pricesArray = addPrices(shoppingList,prices);
    let message = calculateTotal(pricesArray);
    alert(message);
 }
@@ -34,7 +35,6 @@ function main() {
  */
 
 
-
 /* 2. Function addPrices(shoppingList)
  * Create a 1D priceList array by SPLITTING a string called prices
  * Create a 2D array called pricesArray where you will store items and prices. 
@@ -45,9 +45,10 @@ function main() {
  * Push the itemPrice subarray into the pricesArray 
  * You might want to console.log the pricesArray after the loop before you return it.
  * Total lines in my code: 13
- * @param: shopArray
+ * @param: shoppingList, prices
  * @return: pricesArray
  */
+
 
 
 /* 3. Function calculateTotal(pricesArray)
@@ -55,21 +56,12 @@ function main() {
  * Create a variable called message, with first line as "Items to buy:" plus a LINE BREAK
  * Use a FOR LOOP to add each new message line with the item name, $, the price and a line break.
  * PARSE the price as a FLOAT, and add it to the total. 
- * After the loop is done, add "Total = " and the total to the message
+ * After the loop is done, round the total using total.toFixed(2)
+ * Next, add "Total = " and the rounded total to the message
  * No need to console.log the message - you will be returning and alerting it. 
- * Total lines in my code: 8
+ * Total lines in my code: 11
  * Return the message. 
  * @param = pricesArray
  * @return = message
  */ 
-function calculateTotal(pricesArray){
-   let total = 0;
-   let message = "Items to buy: \n";
-   for (let item = 0; item < pricesArray.length;item ++) {
-      message+= pricesArray[item][0] + " $" + pricesArray[item][1]+"\n";
-      total += parseFloat(pricesArray[item][1]);
-   }
-   total = total.toFixed(2);
-   message += "Total = " + total;
-   return message;
-}
+
