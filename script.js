@@ -24,31 +24,40 @@ function main() {
    alert(message);
 }
 
-/* Function makeList(items)
+/* 1. Function makeList(items)
  * Populate an array from a list of items 
  * Using a method which can SPLIT a string into array elements. 
+ * You might want to console.log the itemsArray before you return it. 
  * @param: list of items, separated by commas
- * @return: shopArray []
+ * @return: itemsArray[]
  */
-
 function makeList(items){
-
+   return itemsArray;
 }
 
-
-/* Function addPrices()
- * Create a 2D array (pricesArray) from a 1D array (shopArray) 
- * and two lists
- * to include number of items and price.
+/* 2. Function addPrices(shoppingList)
+ * Use a string variable (which you will SPLIT) to create a 1D priceList array
+ * from a 1D array passed as an argument (shoppingList)
+ * Create an array called pricesArray where you will store items and prices. 
+ * Use a FOR LOOP to create each 2-item subarray from a shoppingList item and the 
+ * item in pricesArray with the same INDEX OF that item in shoppingList array. 
+ * After you create each subarray, PUSH it to the pricesArray you will return. 
+ * You might want to console.log this subArray each time. 
  * @param: shopArray
  * @return: pricesArray
  */
-function addPrices
+function addPrices(shoppingList){
+   let prices = "6.49,4.49,4.89,0.44,1.80";
+   return pricesArray;
+}
+
 /* 3. for loop and array with join method 
 
 /* Same function, using previous code, BUT:
  * the at end, alert list with array.join() method with line breaks 
  * instead of commas */
+
+
  /* 4. 2D Arrays: add Pricing */
 
 /* Same function, using previous code, but THIS TIME add prices
