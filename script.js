@@ -29,7 +29,7 @@ function main() {
 /* 1. Function makeList(items)
  * Use a method which can SPLIT the items string into array elements and store that as itemsArray 
  * Console.log the itemsArray before you return it using TOSTRING before you return it. 
- * Total lines in my code (not including function definition and closing curly bracket): 5
+ * Total lines in my code: 5
  * @param: list of items, separated by commas
  * @return: itemsArray
  */
