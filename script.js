@@ -8,9 +8,6 @@
  * Use stubs to test as you go. 
  */
 
-/* GLOBAL VARIABLES */
-var items = "gallon milk,dozen eggs,link sausage,ounce cheese,stick butter";
-
 /* MAIN
  * 1. Create an array from a string list
  * 2. Create a 2D array from a 1D array to include number of items and price.
@@ -18,7 +15,9 @@ var items = "gallon milk,dozen eggs,link sausage,ounce cheese,stick butter";
  * 4. Display the list and the total
  */
 function main() {
+   let items = "gallon milk,dozen eggs,link sausage,ounce cheese,stick butter";
    let shoppingList = makeList(items);
+   let prices = "6.49,4.49,4.89,0.44,1.80";
    let pricesArray = addPrices(shoppingList);
    let message = calculateTotal(pricesArray);
    alert(message);
@@ -28,7 +27,7 @@ function main() {
  * Populate an array from a list of items, and call it itemsArray.
  * Use a method that can which can SPLIT the list string into array elements. 
  * Console.log the itemsArray before you return it using TOSTRING 
- * Total lines in my code (not including function definition and closing curly bracket): 3
+ * Total lines in my code: 5
  * @param: list of items, separated by commas
  * @return: itemsArray[]
  */
@@ -49,12 +48,11 @@ function makeList(items){
  * Push the pricesArray item with the same index into that itemPrice subArray
  * After you create each subarray, PUSH it to the pricesArray you will return. 
  * You might want to console.log this subArray each time. 
- * Total lines in my code: 10
+ * Total lines in my code: 12
  * @param: shopArray
  * @return: pricesArray
  */
 function addPrices(shoppingList){
-   let prices = "6.49,4.49,4.89,0.44,1.80";
    let priceList = prices.split(",");
    let pricesArray = [];
    for (let item = 0; item < shoppingList.length; item++){
@@ -74,7 +72,7 @@ function addPrices(shoppingList){
  * PARSE the price as a FLOAT, and add it to the total. 
  * After the loop is done, add "Total = " and the total to the message
  * No need to console.log the message - you will be returning and alerting it. 
- * Total lines in my code: 8
+ * Total lines in my code: 11
  * Return the message. 
  * @param = pricesArray
  * @return = message
