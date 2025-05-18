@@ -44,7 +44,7 @@ function main() {
  * Push the pricesArray item with the same index into that itemPrice subArray
  * Push the itemPrice subarray into the pricesArray 
  * You might want to console.log the pricesArray after the loop before you return it.
- * Total lines in my code: 13
+ * Total lines in my code: 12
  * @param: shoppingList, prices
  * @return: pricesArray
  */
