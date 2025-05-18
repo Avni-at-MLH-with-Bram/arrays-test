@@ -12,11 +12,10 @@
 var items = "gallon of milk, dozen eggs, link of sausage, ounce of cheese, stick of butter";
 
 /* MAIN
- * Use global variables above to:
  * 1. Create an array from a string list
  * 2. Create a 2D array from a 1D array to include number of items and price.
- * 3. Find the index of an item and enter number of items and price
- * 4. Total up the prices of all items. 
+ * 3. Calculate the total of the prices of all the items. 
+ * 4. Display the list and the total
  */
 function main() {
    let shoppingList = makeList(items);
@@ -26,15 +25,18 @@ function main() {
 }
 
 /* 1. Function makeList(items)
- * Populate an array from a list of items 
- * Using a method which can SPLIT a string into array elements. 
- * You might want to console.log the itemsArray before you return it. 
+ * Populate an array from a list of items, and call it itemsArray.
+ * Use a method that can which can SPLIT the list string into array elements. 
+ * Console.log the itemsArray before you return it. 
+ * Total line (not including function definition and closing curly bracket: 3) 
  * @param: list of items, separated by commas
  * @return: itemsArray[]
  */
 function makeList(items){
+   let itemsArray = items.split(",");
+   console.log(itemsArray);
    return itemsArray;
-}
+ }
 
 /* 2. Function addPrices(shoppingList)
  * Use a string variable (which you will SPLIT) to create a 1D priceList array
