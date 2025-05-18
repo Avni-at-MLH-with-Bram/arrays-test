@@ -3,14 +3,12 @@
  * As you find them on the shelves, you add them to your smartphone,
  * along with their price, so you can make sure you have enough money.
  * Sometimes you will buy more than 1 item. 
+ * The program should display the list of items, quantities and prices
  * The program should tell you you much the total cost is.
  */
 
 /* GLOBAL VARIABLES */
-let items = "pint of milk, dozen eggs, link of sausage, ounce of cheese, stick of butter";
-let quantities = 1,
-let shopArray = [];
-let pricesArray = [];
+var items = "gallon of milk, dozen eggs, link of sausage, ounce of cheese, stick of butter";
 
 /* MAIN
  * Use global variables above to:
@@ -20,10 +18,14 @@ let pricesArray = [];
  * 4. Total up the prices of all items. 
  */
 function main() {
-   makeList(items);
-   shopArray = makePricesArray();
+   let shopArray = makeList(items);
+   let pricesArray = makePricesArray(shopArray);
+   // quantities = 1,1,1,8,4;
+   // prices = 6.49, 4.49, 4.89, .44, 1.80
    pricesArray = enterPrice(item);
-   let message = "The total is $";
+   let message = "You want to buy \n";
+
+   message += "The total is $";
    message += showTotal(pricesArray);
    alert(message);
 }
@@ -33,16 +35,19 @@ function main() {
  * Using a method which can SPLIT a string into array elements. 
  * @param: list of items, separated by commas
  * @return: shopArray []
+ */
 
-/* 2. for loop and array with toString */
+function makeList(items){
 
-/* Same function, using previous code, BUT:
- * build shopArray variable for the shopping list
- * adjust loop to work with the array index values (start at 0)
- * ask for next list item and push it to the shopArray
- * no need to add a line break after
- * at end of loop, alert the list title, followed by
- * the list with toString() method (it won't have line breaks)*/
+}
+
+
+/* Function makePricesArray()
+ * Create a 2D array (pricesArray) from a 1D array (shopArray) 
+ * to include number of items and price.
+ * @param: shopArray
+ * @return: pricesArray
+ */
 
 /* 3. for loop and array with join method 
 
