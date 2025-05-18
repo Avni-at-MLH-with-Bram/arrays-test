@@ -5,6 +5,7 @@
  * Sometimes you will buy more than 1 item. 
  * The program should display the list of items, quantities and prices
  * The program should tell you you much the total cost is.
+ * Use stubs to test as you go. 
  */
 
 /* GLOBAL VARIABLES */
@@ -20,7 +21,7 @@ var items = "gallon of milk, dozen eggs, link of sausage, ounce of cheese, stick
 function main() {
    let shoppingList = makeList(items);
    let pricesArray = addPrices(shoppingList);
-   let message = displayItems(pricesArray);
+   let message = calculateTotal(pricesArray);
    alert(message);
 }
 
@@ -51,41 +52,16 @@ function addPrices(shoppingList){
    return pricesArray;
 }
 
-/* 3. for loop and array with join method 
-
-/* Same function, using previous code, BUT:
- * the at end, alert list with array.join() method with line breaks 
- * instead of commas */
-
-
- /* 4. 2D Arrays: add Pricing */
-
-/* Same function, using previous code, but THIS TIME add prices
- * When someone enters an item, prompt them also to enter a price separating by comma (like milk, 1.99)])   
- * Convert that entry to an itemPrice array by using string.split() and use a comma as delimiter
- * Push the itemPrice array to shopArray
- */
-
-/* 5. Total up the prices */
-function makeList() {
-    let total = 0;
-    let next = "";
-    let shopArray = [];
-    let shoppingList = " To Buy: \n";
-    for (let item = 1;item<=2;item++) {
-       next = prompt("item "+item+" name "); 
-       shopArray.push(next.split(","));
-    }
-    for (let item = 1;item<=2;item++) {
-       total += parseFloat(shopArray[item-1][1]);
-    }
-   let message = (shoppingList + shopArray.join("\n"));
-    message += "\nTotal is " + total;
-    alert(message);
- }
-/* Same function, using previous code, but THIS TIME total the prices.
- * After you have built the array, create a NEW loop that adds the price 
- * of each item to a total. Do this before the alert. 
- * Save the first alert content as message. 
- * Add total as a line below message, then alert the message. 
- */
+/* 3. Function calculateTotal(pricesArray)
+ * Create a variable called total, set to 0.
+ * Create a variable called message, with first line as "Items to buy " plus a LINE BREAK
+ * Use a FOR LOOP to add each new message line with the item name, $, the price and a line break.
+ * PARSE the price as a FLOAT, and add it to the total. 
+ * After the loop is done, add "Total = " and the total to the message
+ * Return the message. 
+ * @param = pricesArray
+ * @return = message
+ */ 
+function calculateTotal(pricesArray){
+   return message;
+}
