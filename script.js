@@ -18,15 +18,9 @@ var items = "gallon of milk, dozen eggs, link of sausage, ounce of cheese, stick
  * 4. Total up the prices of all items. 
  */
 function main() {
-   let shopArray = makeList(items);
-   let pricesArray = makePricesArray(shopArray);
-   // quantities = 1,1,1,8,4;
-   // prices = 6.49, 4.49, 4.89, .44, 1.80
-   pricesArray = enterPrice(item);
-   let message = "You want to buy \n";
-
-   message += "The total is $";
-   message += showTotal(pricesArray);
+   let shoppingList = makeList(items);
+   let pricesArray = addPrices(shoppingList);
+   let message = displayItems(pricesArray);
    alert(message);
 }
 
@@ -42,13 +36,14 @@ function makeList(items){
 }
 
 
-/* Function makePricesArray()
+/* Function addPrices()
  * Create a 2D array (pricesArray) from a 1D array (shopArray) 
+ * and two lists
  * to include number of items and price.
  * @param: shopArray
  * @return: pricesArray
  */
-
+function addPrices
 /* 3. for loop and array with join method 
 
 /* Same function, using previous code, BUT:
